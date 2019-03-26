@@ -108,7 +108,7 @@ class BertEmbedder(nn.Module):
         else:
             map_location = "cpu"
             device = torch.device("cpu")
-        model.load_state_dict(torch.load(init_checkpoint_pt, map_location=map_location))
+        model.load_state_dict(torch.load(init_checkpoint_pt, map_location=map_location), strict=False)
         model = model.to(device)
         model = cls(model=model, embedding_dim=embedding_dim, use_cuda=use_cuda, bert_mode=bert_mode,
                     bert_config_file=bert_config_file, init_checkpoint_pt=init_checkpoint_pt, freeze=freeze)
