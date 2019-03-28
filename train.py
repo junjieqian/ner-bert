@@ -45,6 +45,7 @@ def read_data(input_file):
 
 
 if __name__ == '__main__':
+    print("Required Pytorch version is above 0.4.0, running with pytorch %s" % torch.__version__)
     print("usage: dataPath modelPath numEpochs")
 
     # Load data
